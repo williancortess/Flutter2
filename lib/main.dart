@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'http/webclient.dart';
 import 'screens/dashboard.dart';
 
 void main() {
   runApp(Bytebank2App());
+  findAll().then((transactions) => print('new transactions $transactions'));
   //save(Contact(0, 'Helen', 2000));
   //findAll().then((contacts) => debugPrint(contacts.toString()));
 }
