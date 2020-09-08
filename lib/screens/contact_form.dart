@@ -1,6 +1,5 @@
 import 'package:bytebank2/database/dao/contact_dao.dart';
 import 'package:bytebank2/models/contact.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ContactForm extends StatefulWidget {
@@ -57,7 +56,9 @@ class _ContactFormState extends State<ContactForm> {
                     final int accountNumber =
                         int.tryParse(_accountNumberController.text);
                     final Contact newContact = Contact(0, name, accountNumber);
-                    _dao.save(newContact).then((id) => Navigator.pop(context, newContact));
+                    _dao
+                        .save(newContact)
+                        .then((id) => Navigator.pop(context, newContact));
                   },
                 ),
               ),
