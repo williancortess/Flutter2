@@ -3,7 +3,8 @@ class Contact {
   final String name;
   final int accountNumber;
 
-  Contact(this.id,
+  Contact(
+    this.id,
     this.name,
     this.accountNumber,
   );
@@ -12,4 +13,15 @@ class Contact {
   String toString() {
     return 'Contact{id: $id, name: $name, accountNumber: $accountNumber}';
   }
+
+  Contact.fromJson(Map<String, dynamic> json)
+      : id = json['id'], //id opcional
+        name = json['name'],
+        accountNumber = json['accountNumber'];
+
+  Map<String, dynamic> toJson() =>
+      { //id opcional
+        'name': name,
+        'accountNumber': accountNumber
+      };
 }
